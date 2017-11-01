@@ -1,18 +1,14 @@
 import { Component } from '@angular/core';
-$IMPORTSTATEMENT
+import { NavController, NavParams } from 'ionic-angular';
+import {AddPrescription} from '../add-prescription/add-prescription';
 
-/**
- * Generated class for the Prescription page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-$IONICPAGE
 @Component({
   selector: 'page-prescription',
   templateUrl: 'prescription.html',
 })
 export class Prescription {
+
+  addPrescription = AddPrescription;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }

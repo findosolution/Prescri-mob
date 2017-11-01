@@ -8,16 +8,19 @@
 </ion-header>
 
 <ion-content padding>
-  <h3>My Prescriptions</h3>
+  <h4>My Prescriptions</h4>
 
   <ion-list>
-    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
-      <ion-icon [name]="item.icon" item-start></ion-icon>
+    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)" [color]="statusColors[item.status]">
       {{item.id}}
       <div class="item-note" item-end>
         {{item.pharmacy}}
       </div>
     </button>
   </ion-list>
+
+  <ion-fab bottom right>
+    <button ion-fab color="primary" mini  [navPush]="addPrescription"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
 
 </ion-content>
