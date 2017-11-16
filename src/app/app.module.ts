@@ -9,8 +9,18 @@ import { ListPage } from '../pages/list/list';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import {AddPrescription} from '../pages/add-prescription/add-prescription';
+import { AddPrescription } from '../pages/add-prescription/add-prescription';
+import { Prescription } from '../pages/prescription/prescription';
+import { Login } from '../pages/login/login';
+import { Register } from '../pages/register/register';
+import { ForgetPassword } from '../pages/forget-password/forget-password';
+
 import { Camera } from 'ionic-native';
+
+import { PrescriptionService } from '../providers/prescription-service';
+import { PharmacyService } from '../providers/pharmacy-service';
+
+import { HttpModule } from '@angular/http';
 
 
 @NgModule({
@@ -18,10 +28,15 @@ import { Camera } from 'ionic-native';
     MyApp,
     HomePage,
     ListPage,
-    AddPrescription
+    AddPrescription,
+    Prescription,
+    Login,
+    Register,
+    ForgetPassword
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
@@ -29,12 +44,18 @@ import { Camera } from 'ionic-native';
     MyApp,
     HomePage,
     ListPage,
-    AddPrescription
+    AddPrescription,
+    Prescription,
+    Login,
+    Register,
+    ForgetPassword
   ],
   providers: [
     StatusBar,
     SplashScreen,
     Camera,
+    PrescriptionService,
+    PharmacyService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

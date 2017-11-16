@@ -9,8 +9,10 @@ import {AddPrescription} from '../add-prescription/add-prescription';
 export class Prescription {
 
   addPrescription = AddPrescription;
+  prescription;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.prescription = navParams.get('item');
   }
 
   ionViewDidLoad() {
